@@ -26,6 +26,11 @@ import logitech from "@/assets/partners/logitech.jpg.asset.json";
 import garfanaLabs from "@/assets/partners/garfanalabs.jpg.asset.json";
 import paytm from "@/assets/partners/paytm.jpg.asset.json";
 import nasiko from "@/assets/partners/nasiko.jpg.asset.json";
+import communityAudience from "@/assets/community-real/community-audience.jpg.asset.json";
+import communityTalk from "@/assets/community-real/community-talk.jpg.asset.json";
+import communityBuilders from "@/assets/community-real/community-builders.jpg.asset.json";
+import communityPresentation from "@/assets/community-real/community-presentation.jpg.asset.json";
+import communityGroup from "@/assets/community-real/community-group.jpg.asset.json";
 import hackathonHall from "@/assets/community-real/hackathon-hall.jpg";
 import inceptrixGroup from "@/assets/community-real/inceptrix-group.png";
 import computerLab from "@/assets/community-real/computer-lab.png";
@@ -58,10 +63,10 @@ function matchesHomeFilter(item: Opportunity, filter: HomeFilter) {
 }
 
 const heroSlides = [
+  { src: communityGroup.url, alt: "HackDriven community members gathered after an event", position: "center 42%" },
   { src: inceptrixGroup, alt: "Inceptrix Hackathon participants", position: "center 42%" },
+  { src: communityAudience.url, alt: "A packed audience at a HackDriven community session", position: "center 45%" },
   { src: computerLab, alt: "Students coding in a massive computer lab", position: "center 45%" },
-  { src: hackathonHall, alt: "HackDriven community working together in the event hall", position: "center 45%" },
-  { src: auditoriumAudience, alt: "A packed audience at a HackDriven session", position: "center 48%" },
 ];
 
 const partners = [
@@ -343,10 +348,10 @@ function Why() {
 
 function Community() {
   const g = [
-    { img: auditoriumAudience, l: "Community Sessions", c: "md:col-span-2 md:row-span-2", position: "center 45%" },
-    { img: computerLab, l: "Tech Talks", c: "", position: "center 48%" },
+    { img: communityAudience.url, l: "Community Sessions", c: "md:col-span-2 md:row-span-2", position: "center 45%" },
+    { img: communityTalk.url, l: "Tech Talks", c: "", position: "center 48%" },
     { img: hackathonHall, l: "AI Community", c: "md:col-span-2", position: "center 48%" },
-    { img: organizerGroup, l: "Together We Build", c: "md:col-span-4", position: "center 42%" },
+    { img: communityGroup.url, l: "Together We Build", c: "md:col-span-4", position: "center 42%" },
   ];
   return (
     <section id="community" className="mx-auto max-w-[1200px] scroll-mt-28 px-6 py-14">
