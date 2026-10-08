@@ -23,7 +23,7 @@ function Contact() {
   const inputClass = "h-11 w-full rounded-xl border border-input bg-background px-4 text-sm outline-none focus:ring-2 focus:ring-ring";
   return <div className="min-h-screen">
     <Navbar />
-    <main className="mx-auto max-w-[1200px] px-6 pb-10 pt-16">
+    <main className="mx-auto max-w-300 px-6 pb-10 pt-16">
       <Reveal className="mx-auto max-w-2xl text-center">
         <Eyebrow>Get in touch</Eyebrow>
         <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Contact <span className="text-gradient">Us</span></h1>

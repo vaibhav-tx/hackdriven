@@ -6,7 +6,7 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-process.env.LOVABLE_PREVIEW_HOST = "5f5288a1-f6cb-46b2-ac33-85d0a2cc472a.lovableproject.com";
+process.env["LOVABLE_PREVIEW_HOST"] = "5f5288a1-f6cb-46b2-ac33-85d0a2cc472a.lovableproject.com";
 
 export default defineConfig({
   tanstackStart: {
