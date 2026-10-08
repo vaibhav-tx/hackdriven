@@ -6,26 +6,7 @@ import {
 } from "lucide-react";
 import { Navbar, Footer } from "@/components/SiteChrome";
 import { Reveal, Eyebrow, PrimaryBtn, GhostBtn } from "@/components/ui-hd";
-import microsoftAzure from "@/assets/partners/microsoft-azure.jpg.asset.json";
-import mastersUnion from "@/assets/partners/masters-union.png.asset.json";
-import v0Logo from "@/assets/partners/v0.png.asset.json";
-import trae from "@/assets/partners/trae.png.asset.json";
-import featherless from "@/assets/partners/featherless-ai.png.asset.json";
-import gfg from "@/assets/partners/gfg.png.asset.json";
-import armoriq from "@/assets/partners/armoriq.jpg.asset.json";
-import windsurf from "@/assets/partners/windsurf.jpg.asset.json";
-import tavily from "@/assets/partners/tavily.jpg.asset.json";
-import rea from "@/assets/partners/rea.jpg.asset.json";
-import elevenlabs from "@/assets/partners/elevenlabs.jpg.asset.json";
-import notion from "@/assets/partners/notion.png.asset.json";
-import insights from "@/assets/partners/insights.jpg.asset.json";
-import ojone from "@/assets/partners/ojone.jpg.asset.json";
-import webbee from "@/assets/partners/webbee.jpg.asset.json";
-import epam from "@/assets/partners/epam.jpg.asset.json";
-import logitech from "@/assets/partners/logitech.jpg.asset.json";
-import garfanaLabs from "@/assets/partners/garfanalabs.jpg.asset.json";
-import paytm from "@/assets/partners/paytm.jpg.asset.json";
-import nasiko from "@/assets/partners/nasiko.jpg.asset.json";
+
 import communityAudience from "@/assets/community-real/community-audience.jpg.asset.json";
 import communityTalk from "@/assets/community-real/community-talk.jpg.asset.json";
 import communityBuilders from "@/assets/community-real/community-builders.jpg.asset.json";
@@ -69,27 +50,12 @@ const heroSlides = [
   { src: computerLab, alt: "Students coding in a massive computer lab", position: "center 45%" },
 ];
 
-const partners = [
-  { name: "Microsoft Azure", logo: microsoftAzure.url },
-  { name: "Masters' Union", logo: mastersUnion.url },
-  { name: "v0", logo: v0Logo.url },
-  { name: "Trae", logo: trae.url },
-  { name: "Featherless AI", logo: featherless.url },
-  { name: "GeeksforGeeks", logo: gfg.url },
-  { name: "ArmorIQ", logo: armoriq.url },
-  { name: "Windsurf", logo: windsurf.url },
-  { name: "Tavily", logo: tavily.url },
-  { name: "REA", logo: rea.url },
-  { name: "ElevenLabs", logo: elevenlabs.url },
-  { name: "Notion", logo: notion.url },
-  { name: "iNSIGHTS", logo: insights.url },
-  { name: "Ojone", logo: ojone.url },
-  { name: "WebBee", logo: webbee.url },
-  { name: "EPAM", logo: epam.url },
-  { name: "Logitech", logo: logitech.url },
-  { name: "Grafana Labs", logo: garfanaLabs.url },
-  { name: "Paytm", logo: paytm.url },
-  { name: "Nasiko", logo: nasiko.url },
+const partnerLogos = [
+  { logo: "/partners/partner-1.jpg" },{ logo: "/partners/partner-10.png" },{ logo: "/partners/partner-11.jpeg" },{ logo: "/partners/partner-12.jpeg" },{ logo: "/partners/partner-13.jpeg" },{ logo: "/partners/partner-14.jpeg" },{ logo: "/partners/partner-15.jpeg" },{ logo: "/partners/partner-16.jpeg" },{ logo: "/partners/partner-17.jpeg" },{ logo: "/partners/partner-18.jpeg" },{ logo: "/partners/partner-19.jpeg" },{ logo: "/partners/partner-2.png" },{ logo: "/partners/partner-20.jpeg" },{ logo: "/partners/partner-21.jpg" },{ logo: "/partners/partner-3.jpg" },{ logo: "/partners/partner-4.png" },{ logo: "/partners/partner-5.png" },{ logo: "/partners/partner-6.jpg" },{ logo: "/partners/partner-7.png" },{ logo: "/partners/partner-8.png" },{ logo: "/partners/partner-9.jpg" }
+];
+
+const collegeLogos = [
+  { logo: "/colleges/college-1.jpeg" },{ logo: "/colleges/college-10.jpeg" },{ logo: "/colleges/college-11.jpeg" },{ logo: "/colleges/college-12.jpeg" },{ logo: "/colleges/college-13.jpeg" },{ logo: "/colleges/college-14.jpeg" },{ logo: "/colleges/college-15.jpeg" },{ logo: "/colleges/college-16.jpeg" },{ logo: "/colleges/college-2.jpeg" },{ logo: "/colleges/college-3.jpeg" },{ logo: "/colleges/college-4.jpeg" },{ logo: "/colleges/college-5.jpeg" },{ logo: "/colleges/college-6.jpeg" },{ logo: "/colleges/college-7.jpeg" },{ logo: "/colleges/college-8.jpeg" },{ logo: "/colleges/college-9.jpeg" }
 ];
 
 function Index() {
@@ -181,14 +147,12 @@ function Stats() {
 }
 
 function Partners() {
-  const firstRow = partners.filter((_, index) => index % 2 === 0);
-  const secondRow = partners.filter((_, index) => index % 2 === 1);
-  const renderRow = (items: typeof partners, direction: "left" | "right") => (
+  const renderRow = (items: { logo: string }[], direction: "left" | "right") => (
     <div className="partner-window">
       <div className={`partner-track partner-track-${direction}`}>
         {[...items, ...items].map((partner, index) => (
-          <div key={`${partner.name}-${index}`} className="partner-logo" aria-hidden={index >= items.length}>
-            <img src={partner.logo} alt={index < items.length ? partner.name : ""} loading="eager" decoding="async" />
+          <div key={`${partner.logo}-${index}`} className="partner-logo" aria-hidden={index >= items.length}>
+            <img src={partner.logo} alt="" loading="eager" decoding="async" />
           </div>
         ))}
       </div>
@@ -198,10 +162,10 @@ function Partners() {
     <section className="partner-band relative overflow-hidden border-b border-border bg-background py-10 sm:py-12" aria-labelledby="partners-title">
       <div className="pointer-events-none absolute inset-x-[15%] top-1/2 h-44 -translate-y-1/2 rounded-full bg-neon/5 blur-3xl" />
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
-        <p id="partners-title" className="mb-7 text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground sm:mb-8 sm:text-sm">TRUSTED BY AMAZING PARTNERS</p>
+        <p id="partners-title" className="mb-7 text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground sm:mb-8 sm:text-sm">TRUSTED BY AMAZING PARTNERS & COLLEGES</p>
         <div className="space-y-6 sm:space-y-8">
-          {renderRow(firstRow, "right")}
-          {renderRow(secondRow, "left")}
+          {renderRow(partnerLogos, "right")}
+          {renderRow(collegeLogos, "left")}
         </div>
       </div>
     </section>
