@@ -4,9 +4,9 @@ import { OpportunityBrowser } from "@/components/OpportunityBrowser";
 
 export const Route = createFileRoute("/hackathons")({
   head: () => ({ meta: [
-    { title: "Hackathons & Competitions — HackDriven" },
-    { name: "description", content: "Explore upcoming hackathons and technology competitions on HackDriven." },
-    { property: "og:title", content: "Hackathons & Competitions — HackDriven" },
+    { title: "Hackathons & Competitions — Vybe Driven" },
+    { name: "description", content: "Explore upcoming hackathons and technology competitions on Vybe Driven." },
+    { property: "og:title", content: "Hackathons & Competitions — Vybe Driven" },
     { property: "og:description", content: "Find your next challenge and build something remarkable." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

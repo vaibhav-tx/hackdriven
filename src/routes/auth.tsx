@@ -13,9 +13,9 @@ const cleanNext = (value: unknown) => typeof value === "string" && value.startsW
 export const Route = createFileRoute("/auth")({
   validateSearch: (search: Record<string, unknown>): AuthSearch => ({ mode: search["mode"] === "signup" ? "signup" : "signin", next: cleanNext(search["next"]) }),
   head: () => ({ meta: [
-    { title: "Sign In or Join — HackDriven" },
-    { name: "description", content: "Sign in to HackDriven or create your builder account." },
-    { property: "og:title", content: "Join HackDriven" },
+    { title: "Sign In or Join — Vybe Driven" },
+    { name: "description", content: "Sign in to Vybe Driven or create your builder account." },
+    { property: "og:title", content: "Join Vybe Driven" },
     { property: "og:description", content: "Create your builder profile and discover your next opportunity." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary" },
@@ -70,7 +70,7 @@ function AuthPage() {
   }, [navigate, user]);
 
   return <div className="min-h-screen bg-background"><Navbar /><main className="mx-auto grid max-w-[1120px] items-center gap-10 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
-    <section className="hidden lg:block"><p className="text-xs font-semibold tracking-[0.22em] text-neon">WELCOME TO HACKDRIVEN</p><h1 className="mt-4 text-5xl font-extrabold leading-tight">Your next build starts with one sign in.</h1><p className="mt-5 max-w-md leading-7 text-muted-foreground">Discover challenges, meet your team and create a builder profile that grows with every event.</p><div className="mt-10 grid max-w-md grid-cols-2 gap-3">{["Hackathons", "Meetups", "Competitions", "Community"].map((item) => <div key={item} className="rounded-xl border border-border bg-surface p-4 text-sm font-semibold">{item}</div>)}</div></section>
+    <section className="hidden lg:block"><p className="text-xs font-semibold tracking-[0.22em] text-neon">WELCOME TO VYBE DRIVEN</p><h1 className="mt-4 text-5xl font-extrabold leading-tight">Your next build starts with one sign in.</h1><p className="mt-5 max-w-md leading-7 text-muted-foreground">Discover challenges, meet your team and create a builder profile that grows with every event.</p><div className="mt-10 grid max-w-md grid-cols-2 gap-3">{["Hackathons", "Meetups", "Competitions", "Community"].map((item) => <div key={item} className="rounded-xl border border-border bg-surface p-4 text-sm font-semibold">{item}</div>)}</div></section>
     <section className="mx-auto w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-glow-soft sm:p-8"><Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="size-4" />Back home</Link><h2 className="mt-7 text-3xl font-bold">{mode === "signin" ? "Welcome back" : "Create your account"}</h2><p className="mt-2 text-sm text-muted-foreground">{mode === "signin" ? "Sign in to continue your builder journey." : "Join the community in less than a minute."}</p>
       <Button type="button" variant="outline" className="mt-7 h-11 w-full rounded-xl" onClick={signInGoogle} disabled={busy}><span className="text-base font-bold text-neon">G</span>Continue with Google</Button>
       <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground"><span className="h-px flex-1 bg-border" />OR CONTINUE WITH EMAIL<span className="h-px flex-1 bg-border" /></div>
@@ -79,7 +79,7 @@ function AuthPage() {
         {error && <p role="alert" className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</p>}{message && <p role="status" className="rounded-lg bg-neon/10 px-3 py-2 text-sm text-foreground">{message}</p>}
         <Button className="h-11 w-full rounded-xl bg-gradient-brand text-primary-foreground hover:brightness-105" disabled={busy}>{busy ? "Please wait…" : mode === "signin" ? "Sign In" : "Create Account"}</Button>
       </form>
-      <p className="mt-6 text-center text-sm text-muted-foreground">{mode === "signin" ? "New to HackDriven?" : "Already have an account?"} <Button type="button" variant="link" className="h-auto p-0 text-neon" onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(""); setMessage(""); }}>{mode === "signin" ? "Sign up" : "Sign in"}</Button></p>
+      <p className="mt-6 text-center text-sm text-muted-foreground">{mode === "signin" ? "New to Vybe Driven?" : "Already have an account?"} <Button type="button" variant="link" className="h-auto p-0 text-neon" onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(""); setMessage(""); }}>{mode === "signin" ? "Sign up" : "Sign in"}</Button></p>
     </section>
   </main></div>;
 }

@@ -6,18 +6,18 @@ import { Button } from "@/components/ui/button";
 import { Reveal, Eyebrow } from "@/components/ui-hd";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [{ title: "Contact Us — HackDriven" }, { name: "description", content: "Get in touch with the HackDriven team for partnerships, events, or support." }, { property: "og:title", content: "Contact Us — HackDriven" }, { property: "og:description", content: "Reach the HackDriven team for partnerships, events, or support." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({ meta: [{ title: "Contact Us — Vybe Driven" }, { name: "description", content: "Get in touch with the Vybe Driven team for partnerships, events, or support." }, { property: "og:title", content: "Contact Us — Vybe Driven" }, { property: "og:description", content: "Reach the Vybe Driven team for partnerships, events, or support." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Contact,
 });
 
-const CONTACT_EMAIL = "hackdriven@gmail.com";
+const CONTACT_EMAIL = "vybedriven@gmail.com";
 
 function Contact() {
   const [name, setName] = useState(""); const [email, setEmail] = useState(""); const [subject, setSubject] = useState(""); const [message, setMessage] = useState(""); const [sent, setSent] = useState(false);
   const submit = (event: FormEvent) => {
     event.preventDefault();
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject || "HackDriven enquiry")}&body=${body}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject || "Vybe Driven enquiry")}&body=${body}`;
     setSent(true);
   };
   const inputClass = "h-11 w-full rounded-xl border border-input bg-background px-4 text-sm outline-none focus:ring-2 focus:ring-ring";
@@ -27,18 +27,18 @@ function Contact() {
       <Reveal className="mx-auto max-w-2xl text-center">
         <Eyebrow>Get in touch</Eyebrow>
         <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Contact <span className="text-gradient">Us</span></h1>
-        <p className="mt-4 text-muted-foreground">Partnerships, hosting an event, media, or just a question — the HackDriven team reads every message.</p>
+        <p className="mt-4 text-muted-foreground">Partnerships, hosting an event, media, or just a question — the Vybe Driven team reads every message.</p>
       </Reveal>
       <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.3fr]">
         <Reveal className="space-y-4">
           {[
             { Icon: Mail, title: "Email", line: CONTACT_EMAIL, sub: "We reply within 1–2 working days." },
-            { Icon: MessageSquare, title: "Instagram", line: "@hackdriven", sub: "Follow HackDriven for event updates." },
+            { Icon: MessageSquare, title: "Instagram", line: "@vybedriven", sub: "Follow Vybe Driven for event updates." },
             { Icon: MapPin, title: "Events", line: "Hosting a hackathon or meetup?", sub: "Mention your city and dates." },
           ].map(({ Icon, title, line, sub }) => (
             <div key={title} className="flex gap-4 rounded-2xl border border-border bg-surface p-5">
               <span className="grid size-11 shrink-0 place-items-center rounded-full bg-neon/15 text-neon"><Icon className="size-5" /></span>
-              <div><h3 className="text-sm font-semibold">{title}</h3>{title === "Instagram" ? <a href="https://www.instagram.com/hackdriven" target="_blank" rel="noreferrer" className="mt-0.5 block text-sm text-foreground hover:text-neon">{line}</a> : <p className="mt-0.5 text-sm text-foreground">{line}</p>}<p className="mt-1 text-xs text-muted-foreground">{sub}</p></div>
+              <div><h3 className="text-sm font-semibold">{title}</h3>{title === "Instagram" ? <a href="https://www.instagram.com/vybedriven" target="_blank" rel="noreferrer" className="mt-0.5 block text-sm text-foreground hover:text-neon">{line}</a> : <p className="mt-0.5 text-sm text-foreground">{line}</p>}<p className="mt-1 text-xs text-muted-foreground">{sub}</p></div>
             </div>
           ))}
         </Reveal>

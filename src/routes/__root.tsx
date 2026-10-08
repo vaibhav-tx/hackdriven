@@ -81,10 +81,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HackDriven" },
+      { title: "Vybe Driven" },
       { name: "description", content: "Hackathons and tech events for ambitious builders." },
-      { name: "author", content: "HackDriven" },
-      { property: "og:title", content: "HackDriven" },
+      { name: "author", content: "Vybe Driven" },
+      { property: "og:title", content: "Vybe Driven" },
       { property: "og:description", content: "Hackathons and tech events for ambitious builders." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -41,10 +41,10 @@ import { opportunities, type Opportunity } from "@/data/opportunities";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HackDriven — Discover Hackathons & Tech Events" },
+      { title: "Vybe Driven — Discover Hackathons & Tech Events" },
       { name: "description", content: "Discover hackathons, competitions and technology events built for ambitious developers, creators and innovators." },
-      { property: "og:title", content: "HackDriven — Build. Hack. Drive the Future." },
-      { property: "og:description", content: "Find your next hackathon, team up and build what's next on HackDriven." },
+      { property: "og:title", content: "Vybe Driven — Build. Hack. Drive the Future." },
+      { property: "og:description", content: "Find your next hackathon, team up and build what's next on Vybe Driven." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -63,9 +63,9 @@ function matchesHomeFilter(item: Opportunity, filter: HomeFilter) {
 }
 
 const heroSlides = [
-  { src: communityGroup.url, alt: "HackDriven community members gathered after an event", position: "center 42%" },
+  { src: communityGroup.url, alt: "Vybe Driven community members gathered after an event", position: "center 42%" },
   { src: inceptrixGroup, alt: "Inceptrix Hackathon participants", position: "center 42%" },
-  { src: communityAudience.url, alt: "A packed audience at a HackDriven community session", position: "center 45%" },
+  { src: communityAudience.url, alt: "A packed audience at a Vybe Driven community session", position: "center 45%" },
   { src: computerLab, alt: "Students coding in a massive computer lab", position: "center 45%" },
 ];
 
@@ -326,7 +326,7 @@ function Why() {
       <div className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-80 max-w-3xl -translate-y-1/2 rounded-full bg-neon/8 blur-[120px]" />
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal className="text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Why <span className="text-gradient">HackDriven?</span></h2>
+          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Why <span className="text-gradient">Vybe Driven?</span></h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">More than events. It's an ecosystem built to turn ideas into impact.</p>
         </Reveal>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -387,7 +387,7 @@ function CTA() {
             <p className="mx-auto mt-5 max-w-lg text-muted-foreground">Find your next challenge, build with great people and turn your ideas into something real.</p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <PrimaryBtn href="/hackathons">Explore Hackathons <ArrowRight className="size-4" /></PrimaryBtn>
-              <GhostBtn href="/auth?mode=signin&next=%2Fprofile">Join HackDriven</GhostBtn>
+              <GhostBtn href="/auth?mode=signin&next=%2Fprofile">Join Vybe Driven</GhostBtn>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/forgot-password")({
-  head: () => ({ meta: [{ title: "Reset Password — HackDriven" }, { name: "description", content: "Request a secure HackDriven password reset link." }, { property: "og:title", content: "Reset Password — HackDriven" }, { property: "og:description", content: "Request a secure password reset link." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({ meta: [{ title: "Reset Password — Vybe Driven" }, { name: "description", content: "Request a secure Vybe Driven password reset link." }, { property: "og:title", content: "Reset Password — Vybe Driven" }, { property: "og:description", content: "Request a secure password reset link." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: ForgotPassword,
 });
 

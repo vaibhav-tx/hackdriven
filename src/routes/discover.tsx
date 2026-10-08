@@ -4,9 +4,9 @@ import { OpportunityBrowser } from "@/components/OpportunityBrowser";
 
 export const Route = createFileRoute("/discover")({
   head: () => ({ meta: [
-    { title: "Discover Opportunities — HackDriven" },
-    { name: "description", content: "Search every HackDriven hackathon, competition, meetup, conference and networking event." },
-    { property: "og:title", content: "Discover Opportunities — HackDriven" },
+    { title: "Discover Opportunities — Vybe Driven" },
+    { name: "description", content: "Search every Vybe Driven hackathon, competition, meetup, conference and networking event." },
+    { property: "og:title", content: "Discover Opportunities — Vybe Driven" },
     { property: "og:description", content: "One place to find every opportunity for technology builders." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

@@ -10,7 +10,7 @@ type Profile = Tables<"profiles">;
 const emptyProfile = { display_name: "", username: "", headline: "", bio: "", location: "", college_or_company: "", skills: "", interests: "", github_url: "", linkedin_url: "", website_url: "" };
 
 export const Route = createFileRoute("/_authenticated/profile")({
-  head: () => ({ meta: [{ title: "Builder Profile — HackDriven" }, { name: "description", content: "Complete and manage your private HackDriven builder profile." }, { property: "og:title", content: "Builder Profile — HackDriven" }, { property: "og:description", content: "Build your identity in the HackDriven community." }, { property: "og:type", content: "profile" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({ meta: [{ title: "Builder Profile — Vybe Driven" }, { name: "description", content: "Complete and manage your private Vybe Driven builder profile." }, { property: "og:title", content: "Builder Profile — Vybe Driven" }, { property: "og:description", content: "Build your identity in the Vybe Driven community." }, { property: "og:type", content: "profile" }, { name: "twitter:card", content: "summary" }] }),
   component: ProfilePage,
 });
 
