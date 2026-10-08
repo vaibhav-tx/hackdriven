@@ -11,7 +11,7 @@ import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 
 function Logo({ className = "h-14" }: { className?: string }) {
-  return <Link to="/" className="flex items-center" aria-label="Vybe Driven home"><span className={`${className} block flex items-center`}><img src={logoUrl} alt="Vybe Driven" className="h-full w-auto object-contain scale-[2.2] origin-left" /></span></Link>;
+  return <Link to="/" className="flex items-center" aria-label="Vybe Driven home"><span className={`${className} block flex items-center`}><img src={logoUrl} alt="Vybe Driven" className="h-full w-auto object-contain scale-[2.2] origin-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] dark:drop-shadow-none transition-all" /></span></Link>;
 }
 
 const links = [
