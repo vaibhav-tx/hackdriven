@@ -11,7 +11,7 @@ import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 
 function Logo({ className = "h-14" }: { className?: string }) {
-  return <Link to="/" className="flex items-center" aria-label="Vybe Driven home"><span className={`${className} block flex items-center`}><img src={logoUrl} alt="Vybe Driven" className="h-full w-auto object-contain scale-[2.2] origin-left invert hue-rotate-180 dark:invert-0 dark:hue-rotate-0 transition-all" /></span></Link>;
+  return <Link to="/" className="flex items-center justify-center" aria-label="Vybe Driven home"><span className={`${className} block flex items-center justify-center`}><img src={logoUrl} alt="Vybe Driven" className="h-full w-auto object-contain scale-[2.2] origin-center invert hue-rotate-180 dark:invert-0 dark:hue-rotate-0 transition-all" /></span></Link>;
 }
 
 const links = [
@@ -74,7 +74,7 @@ export function Navbar() {
             return <li key={item.label} className="group relative"><Link to={item.to} aria-label={item.label} title={item.label} className={`nav-icon grid size-11 place-items-center rounded-full border-2 transition ${active ? "is-active border-lime shadow-glow" : "border-transparent hover:border-border hover:bg-surface"}`}><img src={item.image} alt="" className="nav-art size-6 object-contain" /></Link><span className="pointer-events-none absolute left-1/2 top-[calc(100%+10px)] -translate-x-1/2 rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-sm transition group-hover:opacity-100 group-focus-within:opacity-100">{item.label}</span></li>;
           })}
         </ul>
-        <div className="lg:absolute lg:left-1/2 lg:-translate-x-1/2"><Logo className="h-11" /></div>
+        <div className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex items-center justify-center"><Logo className="h-16" /></div>
         <div className="hidden items-center gap-2 lg:flex">
           <Link to="/contact" className="rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition hover:text-neon">Contact Us</Link>
           {!loading && (user ? <ProfileMenu /> : <Button asChild className="rounded-full bg-gradient-brand text-primary-foreground hover:brightness-105"><Link to="/auth" search={{ mode: "signin", next: "/" }}>Sign In</Link></Button>)}
