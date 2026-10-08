@@ -51,11 +51,46 @@ const heroSlides = [
 ];
 
 const partnerLogos = [
-  { logo: "/partners/partner-1.jpg" },{ logo: "/partners/partner-10.png" },{ logo: "/partners/partner-11.jpeg" },{ logo: "/partners/partner-12.jpeg" },{ logo: "/partners/partner-13.jpeg" },{ logo: "/partners/partner-14.jpeg" },{ logo: "/partners/partner-15.jpeg" },{ logo: "/partners/partner-16.jpeg" },{ logo: "/partners/partner-17.jpeg" },{ logo: "/partners/partner-18.jpeg" },{ logo: "/partners/partner-19.jpeg" },{ logo: "/partners/partner-2.png" },{ logo: "/partners/partner-20.jpeg" },{ logo: "/partners/partner-21.jpg" },{ logo: "/partners/partner-3.jpg" },{ logo: "/partners/partner-4.png" },{ logo: "/partners/partner-5.png" },{ logo: "/partners/partner-6.jpg" },{ logo: "/partners/partner-7.png" },{ logo: "/partners/partner-8.png" },{ logo: "/partners/partner-9.jpg" }
+  { name: "Partner", logo: "/partners/partner-1.jpg" },
+  { name: "v0", logo: "/partners/partner-10.png" },
+  { name: "Partner", logo: "/partners/partner-11.jpeg" },
+  { name: "Partner", logo: "/partners/partner-12.jpeg" },
+  { name: "Partner", logo: "/partners/partner-13.jpeg" },
+  { name: "Partner", logo: "/partners/partner-14.jpeg" },
+  { name: "Partner", logo: "/partners/partner-15.jpeg" },
+  { name: "Partner", logo: "/partners/partner-16.jpeg" },
+  { name: "Partner", logo: "/partners/partner-17.jpeg" },
+  { name: "Partner", logo: "/partners/partner-18.jpeg" },
+  { name: "Partner", logo: "/partners/partner-19.jpeg" },
+  { name: "Devfolio", logo: "/partners/partner-2.png" },
+  { name: "Partner", logo: "/partners/partner-20.jpeg" },
+  { name: "Partner", logo: "/partners/partner-21.jpg" },
+  { name: "ElevenLabs", logo: "/partners/partner-3.jpg" },
+  { name: "GeeksforGeeks", logo: "/partners/partner-4.png" },
+  { name: "Masters' Union", logo: "/partners/partner-5.png" },
+  { name: "Microsoft Azure", logo: "/partners/partner-6.jpg" },
+  { name: "Notion", logo: "/partners/partner-7.png" },
+  { name: "Notion", logo: "/partners/partner-8.png" },
+  { name: "Unstop", logo: "/partners/partner-9.jpg" }
 ];
 
 const collegeLogos = [
-  { logo: "/colleges/college-1.jpeg" },{ logo: "/colleges/college-10.jpeg" },{ logo: "/colleges/college-11.jpeg" },{ logo: "/colleges/college-12.jpeg" },{ logo: "/colleges/college-13.jpeg" },{ logo: "/colleges/college-14.jpeg" },{ logo: "/colleges/college-15.jpeg" },{ logo: "/colleges/college-16.jpeg" },{ logo: "/colleges/college-2.jpeg" },{ logo: "/colleges/college-3.jpeg" },{ logo: "/colleges/college-4.jpeg" },{ logo: "/colleges/college-5.jpeg" },{ logo: "/colleges/college-6.jpeg" },{ logo: "/colleges/college-7.jpeg" },{ logo: "/colleges/college-8.jpeg" },{ logo: "/colleges/college-9.jpeg" }
+  { name: "College", logo: "/colleges/college-1.jpeg" },
+  { name: "College", logo: "/colleges/college-10.jpeg" },
+  { name: "College", logo: "/colleges/college-11.jpeg" },
+  { name: "College", logo: "/colleges/college-12.jpeg" },
+  { name: "College", logo: "/colleges/college-13.jpeg" },
+  { name: "College", logo: "/colleges/college-14.jpeg" },
+  { name: "College", logo: "/colleges/college-15.jpeg" },
+  { name: "College", logo: "/colleges/college-16.jpeg" },
+  { name: "College", logo: "/colleges/college-2.jpeg" },
+  { name: "College", logo: "/colleges/college-3.jpeg" },
+  { name: "College", logo: "/colleges/college-4.jpeg" },
+  { name: "College", logo: "/colleges/college-5.jpeg" },
+  { name: "College", logo: "/colleges/college-6.jpeg" },
+  { name: "College", logo: "/colleges/college-7.jpeg" },
+  { name: "College", logo: "/colleges/college-8.jpeg" },
+  { name: "College", logo: "/colleges/college-9.jpeg" }
 ];
 
 function Index() {
@@ -147,12 +182,16 @@ function Stats() {
 }
 
 function Partners() {
-  const renderRow = (items: { logo: string }[], direction: "left" | "right") => (
+  const renderRow = (items: { name: string; logo: string }[], direction: "left" | "right") => (
     <div className="partner-window">
       <div className={`partner-track partner-track-${direction}`}>
         {[...items, ...items].map((partner, index) => (
-          <div key={`${partner.logo}-${index}`} className="partner-logo" aria-hidden={index >= items.length}>
-            <img src={partner.logo} alt="" loading="eager" decoding="async" />
+          <div key={`${partner.logo}-${index}`} className="group relative partner-logo flex justify-center" aria-hidden={index >= items.length}>
+            <img src={partner.logo} alt={partner.name} loading="eager" decoding="async" />
+            
+            <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100 dark:bg-white dark:text-black">
+              {partner.name}
+            </div>
           </div>
         ))}
       </div>
