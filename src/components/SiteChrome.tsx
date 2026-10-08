@@ -244,90 +244,94 @@ export function Navbar() {
 
 export function Footer() {
   return (
-    <footer className="mt-10 border-t border-border bg-background">
-      <div className="mx-auto grid max-w-300 gap-8 px-6 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
-        <div>
-          <Logo className="h-16 ml-4" />
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-            Where ambitious builders meet their next challenge.
-          </p>
-          <div className="mt-4 flex gap-2">
-            <a
-              href="https://www.instagram.com/vybedriven"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Vybe Driven on Instagram"
-              className="grid size-10 place-items-center rounded-full border border-border text-muted-foreground transition hover:border-neon/50 hover:text-neon"
-            >
-              <Instagram className="size-4" />
-            </a>
-            <a
-              href="mailto:vybedriven@gmail.com"
-              aria-label="Email Vybe Driven"
-              className="grid size-10 place-items-center rounded-full border border-border text-muted-foreground transition hover:border-neon/50 hover:text-neon"
-            >
-              <Mail className="size-4" />
-            </a>
-          </div>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold">Explore</h4>
-          <ul className="mt-3 space-y-2">
-            <li>
-              <Link
-                to="/hackathons"
-                className="text-sm text-muted-foreground hover:text-foreground"
-              >
-                Hackathons
-              </Link>
-            </li>
-            <li>
-              <Link to="/events" className="text-sm text-muted-foreground hover:text-foreground">
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link to="/discover" className="text-sm text-muted-foreground hover:text-foreground">
-                Discover
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold">Contact</h4>
-          <ul className="mt-3 space-y-2">
-            <li>
-              <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground">
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <a
-                href="mailto:vybedriven@gmail.com"
-                className="break-all text-sm text-muted-foreground hover:text-foreground"
-              >
-                vybedriven@gmail.com
-              </a>
-            </li>
-            <li>
+    <footer className="relative mt-20 overflow-hidden border-t border-border bg-surface/50 backdrop-blur-2xl">
+      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[15%] select-none opacity-[0.03] dark:opacity-[0.02]">
+        <p className="whitespace-nowrap text-[15vw] font-black leading-none tracking-tighter">
+          VYBE DRIVEN
+        </p>
+      </div>
+
+      <div className="relative mx-auto max-w-300 px-6 pb-12 pt-16 md:px-8 md:pt-20">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
+          <div>
+            <Logo className="h-16 ml-4" />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Where ambitious builders meet their next challenge. Connect, build, and drive the future.
+            </p>
+            <div className="mt-6 flex gap-3">
               <a
                 href="https://www.instagram.com/vybedriven"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground"
+                aria-label="Vybe Driven on Instagram"
+                className="grid size-10 place-items-center rounded-full border border-border text-muted-foreground transition hover:-translate-y-0.5 hover:border-neon hover:text-neon"
               >
-                @vybedriven
+                <Instagram className="size-4" />
               </a>
-            </li>
-          </ul>
+              <a
+                href="mailto:vybedriven@gmail.com"
+                aria-label="Email Vybe Driven"
+                className="grid size-10 place-items-center rounded-full border border-border text-muted-foreground transition hover:-translate-y-0.5 hover:border-neon hover:text-neon"
+              >
+                <Mail className="size-4" />
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold tracking-wide">Explore</h4>
+            <ul className="mt-5 space-y-3">
+              <li>
+                <Link
+                  to="/hackathons"
+                  className="text-sm text-muted-foreground transition hover:text-neon"
+                >
+                  Hackathons
+                </Link>
+              </li>
+              <li>
+                <Link to="/events" className="text-sm text-muted-foreground transition hover:text-neon">
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/discover" className="text-sm text-muted-foreground transition hover:text-neon">
+                  Discover
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold tracking-wide">Contact</h4>
+            <ul className="mt-5 space-y-3">
+              <li>
+                <Link to="/contact" className="text-sm text-muted-foreground transition hover:text-neon">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="mailto:vybedriven@gmail.com"
+                  className="break-all text-sm text-muted-foreground transition hover:text-neon"
+                >
+                  vybedriven@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/vybedriven"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-muted-foreground transition hover:text-neon"
+                >
+                  @vybedriven
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div className="relative overflow-hidden bg-gradient-brand text-primary-foreground">
-        <div className="relative mx-auto max-w-350 px-4 pb-5 pt-7">
-          <p className="select-none whitespace-nowrap text-center text-[12.5vw] tracking-tighter font-black leading-[0.85] xl:text-[11rem]">
-            VYBE DRIVEN
-          </p>
-          <p className="mt-4 text-center text-xs font-medium">
+
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-xs font-medium text-muted-foreground">
             © 2026 Vybe Driven. All rights reserved.
           </p>
         </div>
