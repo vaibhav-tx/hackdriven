@@ -4,6 +4,7 @@ import {
   ArrowRight, Users, Calendar, Trophy, Radio, MapPin, Search, UsersRound, Rocket, LineChart,
   Swords, Award, Zap, Globe, Activity, Code2, Sparkles,
 } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Navbar, Footer } from "@/components/SiteChrome";
 import { Reveal, Eyebrow, PrimaryBtn, GhostBtn } from "@/components/ui-hd";
 import microsoftAzure from "@/assets/partners/microsoft-azure.jpg.asset.json";
@@ -187,24 +188,33 @@ function Partners() {
     <div className="partner-window">
       <div className={`partner-track partner-track-${direction}`}>
         {[...items, ...items].map((partner, index) => (
-          <div key={`${partner.name}-${index}`} className="partner-logo" aria-hidden={index >= items.length}>
-            <img src={partner.logo} alt={index < items.length ? partner.name : ""} loading="eager" decoding="async" />
-          </div>
+          <Tooltip key={`${partner.name}-${index}`}>
+            <TooltipTrigger asChild>
+              <div className="partner-logo" aria-hidden={index >= items.length}>
+                <img src={partner.logo} alt={index < items.length ? partner.name : ""} loading="eager" decoding="async" />
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{partner.name}</p>
+            </TooltipContent>
+          </Tooltip>
         ))}
       </div>
     </div>
   );
   return (
-    <section className="partner-band relative overflow-hidden border-b border-border bg-background py-10 sm:py-12" aria-labelledby="partners-title">
-      <div className="pointer-events-none absolute inset-x-[15%] top-1/2 h-44 -translate-y-1/2 rounded-full bg-neon/5 blur-3xl" />
-      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
-        <p id="partners-title" className="mb-7 text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground sm:mb-8 sm:text-sm">TRUSTED BY AMAZING PARTNERS</p>
-        <div className="space-y-6 sm:space-y-8">
-          {renderRow(firstRow, "right")}
-          {renderRow(secondRow, "left")}
+    <TooltipProvider>
+      <section className="partner-band relative overflow-hidden border-b border-border bg-background py-10 sm:py-12" aria-labelledby="partners-title">
+        <div className="pointer-events-none absolute inset-x-[15%] top-1/2 h-44 -translate-y-1/2 rounded-full bg-neon/5 blur-3xl" />
+        <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
+          <p id="partners-title" className="mb-7 text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground sm:mb-8 sm:text-sm">TRUSTED BY AMAZING PARTNERS</p>
+          <div className="space-y-6 sm:space-y-8">
+            {renderRow(firstRow, "right")}
+            {renderRow(secondRow, "left")}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </TooltipProvider>
   );
 }
 
