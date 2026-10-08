@@ -51,10 +51,9 @@ const heroSlides = [
 ];
 
 const partnerLogos = [
+  { name: "MLH", logo: "/partners/MLH.png" },
   { name: "Ignite Room", logo: "/partners/partner-1.jpg" },
-  { name: "v0", logo: "/partners/partner-10.png" },
   { name: "Literary Loft", logo: "/partners/partner-11.jpeg" },
-  { name: "Ignite Room", logo: "/partners/partner-12.jpeg" },
   { name: "Cisco", logo: "/partners/partner-13.jpeg" },
   { name: "Infraon", logo: "/partners/partner-14.jpeg" },
   { name: "NIIT Foundation", logo: "/partners/partner-15.jpeg" },
@@ -70,8 +69,8 @@ const partnerLogos = [
   { name: "Masters' Union", logo: "/partners/partner-5.png" },
   { name: "Microsoft Azure", logo: "/partners/partner-6.jpg" },
   { name: "Notion", logo: "/partners/partner-7.png" },
-  { name: "Notion", logo: "/partners/partner-8.png" },
-  { name: "Unstop", logo: "/partners/partner-9.jpg" }
+  { name: "Unstop", logo: "/partners/partner-9.jpg" },
+  { name: "v0", logo: "/partners/vO.png" }
 ];
 
 const collegeLogos = [
@@ -189,7 +188,7 @@ function Partners() {
           <div key={`${partner.logo}-${index}`} className="group relative partner-logo flex justify-center" aria-hidden={index >= items.length}>
             <img src={partner.logo} alt={partner.name} loading="eager" decoding="async" />
             
-            <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100 dark:bg-white dark:text-black">
+            <div className="pointer-events-none absolute bottom-[-10px] left-1/2 z-50 -translate-x-1/2 whitespace-nowrap text-xs font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               {partner.name}
             </div>
           </div>

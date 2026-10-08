@@ -177,7 +177,9 @@ html:not(.dark) .nav-icon.is-active .nav-art { filter: grayscale(1) brightness(0
   position: relative;
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
-  padding-block: 0.4rem;
+  padding-top: 0.4rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: -1.1rem;
 }
 .partner-track {
   display: flex;
