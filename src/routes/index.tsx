@@ -129,12 +129,12 @@ function Hero() {
         ))}
       </div>
       <div className="hero-scrim absolute inset-0" />
-      <div className="relative mx-auto w-full max-w-[1200px] px-6">
-        <div className="animate-rise max-w-[710px]">
+      <div className="relative mx-auto w-full max-w-300 px-6">
+        <div className="animate-rise max-w-177.5">
           <h1 className="text-[44px] font-extrabold leading-[0.98] text-hero-foreground sm:text-6xl lg:text-[76px]">
             Build. Hack.<br />Drive the <span className="text-hero-accent">Future.</span>
           </h1>
-          <p className="mt-6 max-w-[590px] text-lg text-hero-muted sm:text-xl">
+          <p className="mt-6 max-w-147.5 text-lg text-hero-muted sm:text-xl">
             Discover hackathons, competitions and technology events built for ambitious developers, creators and innovators.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -164,7 +164,7 @@ function Stats() {
     { v: "₹322K+", l: "Prize Pool", i: Trophy },
   ];
   return (
-    <section className="mx-auto max-w-[1200px] px-6">
+    <section className="mx-auto max-w-300 px-6">
       <Reveal>
         <div className="grid grid-cols-2 overflow-hidden rounded-3xl border border-border bg-surface shadow-glow-soft lg:grid-cols-4">
           {s.map(({ v, l, i: I }, idx) => (
@@ -199,7 +199,7 @@ function Partners() {
   return (
     <section className="partner-band relative overflow-hidden border-b border-border bg-background py-10 sm:py-12" aria-labelledby="partners-title">
       <div className="pointer-events-none absolute inset-x-[15%] top-1/2 h-44 -translate-y-1/2 rounded-full bg-neon/5 blur-3xl" />
-      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
+      <div className="relative mx-auto max-w-350 px-4 sm:px-6">
         <p id="partners-title" className="mb-7 text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground sm:mb-8 sm:text-sm">TRUSTED BY AMAZING PARTNERS & COLLEGES</p>
         <div className="space-y-6 sm:space-y-8">
           {renderRow(partnerLogos, "right")}
@@ -219,7 +219,7 @@ function Events() {
     .sort((a, b) => Number(a.status === "Opening soon") - Number(b.status === "Opening soon"))
     .slice(0, 9);
   return (
-    <section id="events" className="mx-auto max-w-[1200px] scroll-mt-28 px-6 py-12">
+    <section id="events" className="mx-auto max-w-300 scroll-mt-28 px-6 py-12">
       <Reveal>
         <Eyebrow>DISCOVER</Eyebrow>
         <div className="mt-3 flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -240,7 +240,7 @@ function Events() {
         <article className="group grid overflow-hidden rounded-3xl border border-neon/25 bg-surface shadow-glow-soft md:grid-cols-[1.2fr_1fr]">
           <div className="relative overflow-hidden">
             <img src={featured.image} alt={featured.title} loading="lazy" width={1280} height={768} className="h-full min-h-64 w-full bg-background object-contain transition duration-700 group-hover:scale-[1.02]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/80" />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent to-surface/80" />
             <span className="absolute left-5 top-5 rounded-full bg-neon px-3 py-1 text-xs font-bold text-primary-foreground">FEATURED</span>
           </div>
           <div className="flex flex-col justify-center p-8 sm:p-10">
@@ -261,9 +261,9 @@ function Events() {
         {list.map((e, i) => (
           <Reveal key={e.title} delay={i * 60}>
             <Link to="/opportunities/$slug" params={{ slug: e.slug }} aria-label={`View ${e.title} details`} className="group block h-full rounded-[22px] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"><article className="flex h-full flex-col overflow-hidden rounded-[22px] border border-border bg-surface transition duration-300 group-hover:-translate-y-1.5 group-hover:border-neon/40 group-hover:shadow-glow">
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-16/10 overflow-hidden">
                 <img src={e.image} alt={e.title} loading="lazy" width={1024} height={640} style={e.imagePosition ? { objectPosition: e.imagePosition } : undefined} className={`h-full w-full bg-surface transition duration-700 group-hover:scale-[1.02] ${e.imageFit === "contain" ? "object-contain" : "object-cover"}`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-surface via-transparent" />
                 <span className="glass absolute left-4 top-4 rounded-full border border-border px-3 py-1 text-[11px] font-semibold">{e.tag}</span>
               </div>
               <div className="flex flex-1 flex-col p-6">
@@ -296,7 +296,7 @@ function Features() {
     { i: Award, t: "Get Recognized", d: "Earn prizes, badges and a profile that recruiters actually look at." },
   ];
   return (
-    <section className="mx-auto max-w-[1200px] px-6 py-14">
+    <section className="mx-auto max-w-300 px-6 py-14">
       <Reveal>
         <Eyebrow>BUILT FOR BUILDERS</Eyebrow>
         <h2 className="mt-3 text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl">Everything You Need<br />to <span className="text-gradient">Build What's Next.</span></h2>
@@ -326,7 +326,7 @@ function Why() {
   return (
     <section className="relative py-14">
       <div className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-80 max-w-3xl -translate-y-1/2 rounded-full bg-neon/8 blur-[120px]" />
-      <div className="relative mx-auto max-w-[1200px] px-6">
+      <div className="relative mx-auto max-w-300 px-6">
         <Reveal className="text-center">
           <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Why <span className="text-gradient">Vybe Driven?</span></h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">More than events. It's an ecosystem built to turn ideas into impact.</p>
@@ -334,7 +334,7 @@ function Why() {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {w.map(({ n, i: I, t, d }, idx) => (
             <Reveal key={n} delay={idx * 70}>
-              <div className="relative h-full overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-surface-2 to-background p-8 sm:p-10">
+              <div className="relative h-full overflow-hidden rounded-3xl border border-border bg-linear-to-br from-surface-2 to-background p-8 sm:p-10">
                 <span className="absolute -right-2 -top-6 text-[140px] font-black leading-none text-neon/10">{n}</span>
                 <I className="relative size-6 text-neon" />
                 <h3 className="relative mt-8 text-2xl font-bold">{t}</h3>
@@ -356,7 +356,7 @@ function Community() {
     { img: communityGroup.url, l: "Together We Build", c: "md:col-span-4", position: "center 42%" },
   ];
   return (
-    <section id="community" className="mx-auto max-w-[1200px] scroll-mt-28 px-6 py-14">
+    <section id="community" className="mx-auto max-w-300 scroll-mt-28 px-6 py-14">
       <Reveal className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <Eyebrow>COMMUNITY</Eyebrow>
@@ -364,11 +364,11 @@ function Community() {
         </div>
         <p className="max-w-sm text-muted-foreground">Meet the people who build, compete and create together.</p>
       </Reveal>
-      <div className="mt-10 grid auto-rows-[220px] gap-4 md:grid-cols-4">
+      <div className="mt-10 grid auto-rows-55 gap-4 md:grid-cols-4">
         {g.map((x) => (
           <div key={x.l} className={`group relative overflow-hidden rounded-2xl ${x.c}`}>
             <img src={x.img} alt={x.l} loading="lazy" style={{ objectPosition: x.position }} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent transition group-hover:bg-neon/15" />
+            <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent transition group-hover:bg-neon/15" />
             <span className="absolute bottom-4 left-4 flex items-center gap-1.5 text-sm font-semibold"><Sparkles className="size-3.5 text-neon" />{x.l}</span>
           </div>
         ))}
@@ -379,11 +379,11 @@ function Community() {
 
 function CTA() {
   return (
-    <section className="mx-auto max-w-[1200px] px-6 py-8">
+    <section className="mx-auto max-w-300 px-6 py-8">
       <Reveal>
-        <div className="relative overflow-hidden rounded-[32px] border border-neon/20 bg-surface-3 px-8 py-14 text-center sm:px-16">
+        <div className="relative overflow-hidden rounded-4xl border border-neon/20 bg-surface-3 px-8 py-14 text-center sm:px-16">
           <div className="bg-grid pointer-events-none absolute inset-0" />
-          <div className="pointer-events-none absolute -bottom-40 left-1/2 size-[600px] -translate-x-1/2 rounded-full bg-neon/20 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 left-1/2 size-150 -translate-x-1/2 rounded-full bg-neon/20 blur-[120px]" />
           <div className="relative">
             <h2 className="text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl">Ready to<br /><span className="text-gradient">Drive What's Next?</span></h2>
             <p className="mx-auto mt-5 max-w-lg text-muted-foreground">Find your next challenge, build with great people and turn your ideas into something real.</p>
